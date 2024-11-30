@@ -1,6 +1,6 @@
 # Self-Hosting a VPN with Tailscale on a Raspberry Pi
 
-Do you have a spare Raspberry Pi lying around just waiting for a fun project? Let’s give it a new purpose in life by turning it into our very own secure VPN using Tailscale!
+Do you have a spare Raspberry Pi lying around just waiting for a fun project? Let’s give it a new purpose in life by turning it into our very own secure VPN using [Tailscale](https://tailscale.com/)!
 
 ---
 
@@ -40,7 +40,7 @@ Before we dive into setting up Tailscale and our exit node on the Raspberry Pi, 
 - **Raspberry Pi**: Any model will do, though having one with a decent amount of resources (like a Raspberry Pi 3 or newer) will make the process smoother. I used a Raspberry Pi 4 B+, which moonlights quite literally as my Indi-Allsky timelapse machine.
 - **A microSD card**: We'll be flashing our microSD card with a Raspberry Pi OS in the next section of our guide.
 - **Internet access**: Your Pi will need a stable connection to the internet (either via Ethernet or Wi-Fi). I started with Wi-Fi then switched over to Ethernet.
-- **A Tailscale account**: We’ll need this to connect our Raspberry Pi and other devices to our private network. If you don’t already have an account, you can sign up for free!
+- **A Tailscale account**: We’ll need this to connect our Raspberry Pi and other devices to our private network. If you don’t already have an account, [you can sign up for free](https://tailscale.com/pricing?plan=personal)!
 - **A computer or device to interact with the Raspberry Pi**: You'll need to connect to your Pi via SSH or directly using a monitor and keyboard. I used the command line to SSH into my Raspberry Pi, as I don't have an extra keyboard, mouse, or display.
 
 ---
@@ -344,7 +344,9 @@ If you encounter any issues along the way, not to worry, as Tailscale has a fant
 
 Self-hosting a VPN (and setting up an exit node) with Tailscale on a Raspberry Pi is not only fun but also a great way to improve your privacy and security while browsing the internet. If you're interested in building a similar setup or want to ask questions about the process as I experienced it, feel free to leave a comment or reach out to me!
 
-Thank you for following along!
+Thank you for following along with me!  
+
+\(^-^)/
 
 ---
 
