@@ -40,7 +40,7 @@ Before we dive into setting up Tailscale and our exit node on the Raspberry Pi, 
 
 - **Raspberry Pi**: Any model will do, though having one with a decent amount of resources (like a Raspberry Pi 3 or newer) will make the process smoother. I used a Raspberry Pi 4 B+, which moonlights quite literally as my Indi-Allsky timelapse machine.
 - **A microSD card**: We'll be flashing our microSD card with a Raspberry Pi OS in the next section of our guide.
-- **Internet access**: Your Pi will need a stable connection to the internet (either via Ethernet or Wi-Fi). I started with Wi-Fi then switched over to Ethernet.
+- **Internet access**: Your Pi will need a stable connection to the internet (either via Ethernet or Wi-Fi). While I started with Wi-Fi, which works fine for general use, I switched to Ethernet for better stability, speed, and security. Ethernet offers a more reliable, faster connection with lower latency, reducing the risk of interruptions or slowdowns, especially when running services like Tailscale. It's also a more secure option in environments where wireless networks may have vulnerabilities.
 - **A Tailscale account**: We’ll need this to connect our Raspberry Pi and other devices to our private network. If you don’t already have an account, [you can sign up for free](https://tailscale.com/pricing?plan=personal)!
 - **A computer or device to interact with the Raspberry Pi**: You'll need to connect to your Pi via SSH or directly using a monitor and keyboard. I used the command line to SSH into my Raspberry Pi, as I don't have an extra keyboard, mouse, or display.
 
@@ -70,7 +70,7 @@ If you already know how to flash your microSD card with Raspberry Pi OS, you can
        - In the **General** tab:
            - Set a hostname.
            - Set the username and password.
-             - **Note**: While it's okay to keep the default `pi` username, to ensure security, I highly recommend leveraging a **password manager** to generate and securely store a **strong, unique password**. While Tailscale secures the connection itself, once your Raspberry Pi is connected to the network, it may be accessible to devices on your network--particularly if you set it up as an exit node. Creatinging a strong password and storing it securely in a password manager not only protects your Raspberry Pi from unauthorized access but also simplifies managing and remembering your credentials.
+             - **Note**: While it's okay to keep the default `pi` username, to ensure security, I highly recommend leveraging a **password manager** to generate and securely store a **strong, unique password**. While Tailscale secures the connection itself, once your Raspberry Pi is connected to the network, it may be accessible to devices on your network--particularly if you set it up as an exit node. Creating a strong password and storing it securely in a password manager not only protects your Raspberry Pi from unauthorized access but also simplifies managing and remembering your credentials.
            - Configure wireless LAN by entering your Wi-Fi's **SSID and password**, and select your **two-character country code** from the dropdown menu.
            - Set locale settings by designating your **time zone** and your **keyboard layout**.
        - In the **Services** tab:
