@@ -319,7 +319,7 @@ From the Tailscale app on our other devices, we can now use the Raspberry Pi as 
 When I went through the process, there were a few places where I got tripped up temporarily:
 
 - **DNS issues**:
-If you encounter DNS issues (e.g., unable to resolve domain names), it could be due to Tailscale's MagicDNS settings conflicting with your local network. You may need to disable MagicDNS temporarily and reconfigure DNS settings. For example, my Raspberry Pi was still trying to use the original DNS settings from my internet provider, rather than the settings from MagicDNS. Looking into it more, it came down to NetworkManager starting a fight for power over managing the DNS configuration. Thankfully, the official documenation helped me fix the issue: [Configuring Linux DNS](https://tailscale.com/kb/1188/linux-dns?q=dns+fighting#networkmanager--systemd-resolved).
+If you encounter DNS issues (e.g., unable to resolve domain names), it could be due to Tailscale's MagicDNS settings conflicting with your local network. You may need to disable MagicDNS temporarily and reconfigure DNS settings. For example, my Raspberry Pi was still trying to use the original DNS settings from my internet provider, rather than the settings from MagicDNS. Looking into it more, it came down to NetworkManager starting a fight for power over managing the DNS configuration. Thankfully, the official documenation helped me fix the issue manually: [Configuring Linux DNS](https://tailscale.com/kb/1188/linux-dns?q=dns+fighting#networkmanager--systemd-resolved).
 
 - **SSH access issues**: 
 If you're unable to SSH into your Raspberry Pi using its Tailscale IP address, try using the device name instead (e.g., `pi@thenameigavemypi`).
