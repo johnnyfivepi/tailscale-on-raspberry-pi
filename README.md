@@ -2,7 +2,7 @@
 
 ### Purpose of this guide
 
-Inspired by my admiration for [Tailscale](https://tailscale.com) and their innovative, open-source approach to networking, I decided to challenge myself by setting up a VPN on my Raspberry Pi. Along the way, I wanted to create a walkthrough that anyone could follow, whether you're just starting out or have more experience. The result? A friendly, detailed guide to configuring Tailscale on a Raspberry Pi, from flashing the microSD card to setting up an exit node.
+Inspired by my admiration for [Tailscale](https://tailscale.com) and their innovative, open-source approach to networking, I decided to challenge myself by setting up a VPN on my Raspberry Pi. Along the way, I also wanted to create a walkthrough that anyone could follow, whether they're just starting out or have more experience. The result? A detailed guide to configuring Tailscale on a Raspberry Pi, from flashing the microSD card to setting up an exit node.
 
 Do you have a spare Raspberry Pi lying around just waiting for a fun project? If so, let’s give it a new purpose in life by turning it into our very own secure VPN! And, whether you’re a tech enthusiast, a Raspberry Pi hobbyist, or someone just starting out, I hope it inspires confidence to try something new. 
 
@@ -66,31 +66,33 @@ If you already know how to flash your microSD card with Raspberry Pi OS, you can
 3. **Insert your microSD Card**:
    - Insert your microSD card but **before proceeding**, be sure to back up any data on it as the next part of the process will erase it.
 4. **Open Raspberry Pi Imager**:
-   - Click **Choose Device**, and select the Raspberry Pi device you're using. My Raspberry Pi is a 4 B+, so I chose the Raspberry Pi 4 option.
-   - Click **Operating System**, scroll down, and select **Use custom**.
-   - Locate the Raspberry Pi OS .img file you downloaded earlier and click **Open**.
-   - Click **Choose Storage** and select your microSD card.
-   - With all three fields filled, click **Next**.
+   - a. Click **Choose Device**, and select the Raspberry Pi device you're using. My Raspberry Pi is a 4 B+, so I chose the Raspberry Pi 4 option.
+   - b. Click **Operating System**, scroll down, and select **Use custom**.
+   - c. Locate the Raspberry Pi OS .img file you downloaded earlier and click **Open**.
+   - d. Click **Choose Storage** and select your microSD card.
+   - e. With all three fields filled, click **Next**.
 5. **Edit OS Customization Settings**:
-   - Click **Edit Settings**.
-       - In the **General** tab:
-           - Set a hostname.
-           - Set the username and password.
-             - **Note**: While it's okay to keep the default `pi` username, to ensure security, I highly recommend leveraging a **password manager** to generate and securely store a **strong, unique password**. While Tailscale secures the connection itself, once your Raspberry Pi is connected to the network, it may be accessible to devices on your network--particularly if you set it up as an exit node. Creating a strong password and storing it securely in a password manager not only protects your Raspberry Pi from unauthorized access but also simplifies managing and remembering your credentials.
-           - Configure wireless LAN by entering your Wi-Fi's **SSID and password**, and select your **two-character country code** from the dropdown menu.
-           - Set locale settings by designating your **time zone** and your **keyboard layout**.
-       - In the **Services** tab:
-           - Make sure to check **Enable SSH**.
-           - Choose the option to **Use password authentication**.
-       - In the **Options** tab:
-           - Select any of the options you'd like. I only checked **Eject media when finished**, but which options you choose or don't is completely up to you.
-   - Click the **Save** button.
-   - In the **Use OS customization** window, click **Yes**.
+   - a. Click **Edit Settings**.
+   - b. In the **General** tab:
+     - Set a hostname.
+     - Set the username and password.
+         - **Note**: While it's okay to keep the default `pi` username, to ensure security, I highly recommend leveraging a **password manager** to generate and securely store a **strong, unique password**. While Tailscale secures the connection itself, once your Raspberry Pi is connected to the network, it may be accessible to devices on your network--particularly if you set it up as an exit node. Creating a strong password and storing it securely in a password manager not only protects your Raspberry Pi from unauthorized access but also simplifies managing and remembering your credentials.
+     - Configure wireless LAN by entering your Wi-Fi's **SSID and password**, and selecting your **two-character country code** from the dropdown menu.
+     - Set locale settings by designating your **time zone** and your **keyboard layout**.
+   - c. In the **Services** tab:
+       - Make sure to check **Enable SSH**.
+       - Choose the option to **Use password authentication**.
+   
+   - d. In the **Options** tab:
+       - Select any of the options you'd like. I only checked **Eject media when finished**, but which options you choose or don't is completely up to you.
+   - e. Click the **Save** button.
+   - f. In the **Use OS customization** window, click **Yes**.
 6. **Write the Image**:  
 
-   - A new window will come up alerting you to the fact that any existing data on your microSD card will be erased. Click **Yes** to acknowledge the warning and continue. 
-   - It should start writing at this point, so now we can let the imager do its thing. After it has finished writing, it will start verifying.
-   - This process may take a few minutes. I used it as an excuse to stand up, uncurl myself, and get a snack. Your mileage may vary, but **treat yourself**! 
+   - a. A new window will come up alerting you to the fact that any existing data on your microSD card will be erased. Click **Yes** to acknowledge the warning and continue. 
+   - b. It should start writing at this point, so now we can let the imager do its thing. After it has finished writing, it will start verifying. 
+
+    This process may take several minutes.
 
 7. **Insert the microSD card into your Raspberry Pi**:  
 
@@ -186,7 +188,7 @@ For the purposes of our guide, I'll be providing the steps I took related to my 
 
 1. **Add Tailscale's package signing key and repo**:
 
-   - In terminal, run the following command:
+   - In terminal, run the following commands:
 
         ```
         curl -fsSL https://pkgs.tailscale.com/stable/debian/bookworm.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
@@ -204,7 +206,7 @@ For the purposes of our guide, I'll be providing the steps I took related to my 
         
 3. **Authenticate Tailscale**:
 
-   - Once installed, run the following command to connect your Raspberry Pi to your tailnet and authenticate:
+   - Once installed, connect your Raspberry Pi to your tailnet and authenticate:
 
         ```
         sudo tailscale up
@@ -304,17 +306,17 @@ When you're ready, SSH into your Raspberry Pi and follow these steps:
    The first two commands add the necessary settings to the `sysctl.conf` file while the final command applies the changes immediately without requiring a reboot.
 2. **Advertise the exit node**:
     - Let Tailscale know your Raspberry Pi is ready to route traffic:
-   
-          
-          sudo tailscale up --advertise-exit-node
-          
 
+         ```
+         sudo tailscale up --advertise-exit-node
+         ```
+         
 3. **Confirm your exit node is active**:
 
-   - Visit the [Machines](https://login.tailscale.com/admin/machines) page from your Tailscale admin console.
-   - Locate your Raspberry Pi, and **verify that it has an exit node badge**. 
-   - Click the ellipsis icon and select **Edit route settings**.
-   - Check the box to **Use as exit node**, then choose **Save**.
+   - a. Visit the [Machines](https://login.tailscale.com/admin/machines) page from your Tailscale admin console.
+   - b. Locate your Raspberry Pi, and **verify that it has an exit node badge**. 
+   - c. Click the ellipsis icon and select **Edit route settings**.
+   - d. Check the box to **Use as exit node**, then choose **Save**.
 
 From the Tailscale app on our other devices, we can now use the Raspberry Pi as an exit node for secure traffic routing. Tailscale has us covered with step-by-step instructions on **[how to use an exit node](https://tailscale.com/kb/1408/quick-guide-exit-nodes#use-an-exit-node)** depending on the type of device.
 
