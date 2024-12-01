@@ -1,6 +1,12 @@
 # Self-Hosting a VPN with Tailscale on a Raspberry Pi
 
-Do you have a spare Raspberry Pi lying around just waiting for a fun project? Let’s give it a new purpose in life by turning it into our very own secure VPN using [Tailscale](https://tailscale.com/)!
+### Purpose of this guide
+
+Inspired by my admiration for [Tailscale](https://tailscale.com) and their innovative, open-source approach to networking, I decided to challenge myself by setting up a VPN on my Raspberry Pi. Along the way, I wanted to create a walkthrough that anyone could follow, whether you're just starting out or have more experience. The result? A friendly, detailed guide to configuring Tailscale on a Raspberry Pi, from flashing the microSD card to setting up an exit node.
+
+Do you have a spare Raspberry Pi lying around just waiting for a fun project? If so, let’s give it a new purpose in life by turning it into our very own secure VPN! And, whether you’re a tech enthusiast, a Raspberry Pi hobbyist, or someone just starting out, I hope it inspires confidence to try something new. 
+
+**Note**: This is a personal project and not intended to be official in any way. It also doesn't replace the wide range of official resources available in Tailscale's own knowledgebase.
 
 ---
 
