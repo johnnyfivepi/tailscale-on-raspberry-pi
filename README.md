@@ -79,7 +79,7 @@ If you already know how to flash your microSD card with Raspberry Pi OS, you can
        - In the **Options** tab:
            - Select any of the options you'd like. I only checked **Eject media when finished**, but which options you choose or don't is completely up to you.
    - Click the **Save** button.
-   - In the **Use OS customisation** window, click **Yes**. 
+   - In the **Use OS customization** window, click **Yes**.
 6. **Write the Image**:  
 
    - A new window will come up alerting you to the fact that any existing data on your microSD card will be erased. Click **Yes** to acknowledge the warning and continue. 
