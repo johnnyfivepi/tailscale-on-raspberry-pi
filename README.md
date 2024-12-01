@@ -30,7 +30,7 @@ First, did I mention yet that we'll be using Tailscale? Yes? Oh, I mentioned it 
 
 Tailscale creates a private network called a **tailnet**, built on top of WireGuard, an open-source VPN protocol. The magic of Tailscale is that it simplifies the peer-to-peer mesh networking, handling much of the heavy lifting for us. [Insert an appreciative sigh of relief here: we no longer need to manage a traditional VPN server or "trust" a commercial VPN service.]
 
-**Note:** Going through this process yesterday was relatively quick, but I wanted to make sure I understood what I was doing, what I was observing, and what speedbumps I might have been accidentally speeding over. While catching some air was fun for all but the metaphorical vehicle's suspension, we'll slow down a bit in this guide, taking it step by step, ensuring we understand the process, and troubleshooting any bumps along the way.
+**Note:** Going through this process yesterday was relatively quick, but I wanted to make sure I understood what I was doing, what I was observing, and what speed-bumps I might have been accidentally speeding over. While catching some air was fun for all but the metaphorical vehicle's suspension, we'll slow down a bit in this guide, taking it step by step, ensuring we understand the process, and troubleshooting any bumps along the way.
 
 ---
 
@@ -322,9 +322,9 @@ When I went through the process, there were a few places where I got tripped up 
 If you encounter DNS issues (e.g., unable to resolve domain names), it could be due to Tailscale's MagicDNS settings conflicting with your local network. You may need to disable MagicDNS temporarily and reconfigure DNS settings.
 
 - **SSH access issues**: 
-If you're unable to SSH into your Raspberry Pi using its Tailscale IP address, try using the device name intead (e.g., `pi@thenameigavemypi`).
+If you're unable to SSH into your Raspberry Pi using its Tailscale IP address, try using the device name instead (e.g., `pi@thenameigavemypi`).
 
-If you encounter any issues along the way, not to worry, as Tailscale has a fantastic knowledgebase to help:
+If you encounter any issues along the way, not to worry, as Tailscale has a fantastic knowledge base to help:
 - [FAQ - Tailscale](https://tailscale.com/kb/1366/faq)
 - [Troubleshooting - Tailscale](https://tailscale.com/kb/1023/troubleshooting)
 - [DNS in Tailscale - Tailscale](https://tailscale.com/kb/1054/dns)
