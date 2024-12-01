@@ -204,7 +204,7 @@ For the purposes of our guide, I'll be providing the steps I took related to my 
         sudo tailscale up
         ```
 
-5. **Locate the Tailscale IPv4 address**:
+4. **Locate the Tailscale IPv4 address**:
 
    - To find your Raspberry Pi's new Tailscale IPv4 address, enter:
 
@@ -243,11 +243,11 @@ On the other hand, what are some reasons we might want to **disable key expiry**
 
    - Disabling key expiry prevents reauthentication challenges on our Raspberry Pi when it's set up to act as the exit node for the other devices on our tailnet - especially on devices without a display or direct input, and could interrupt service .
 
-**Our Desicion**:
+**My Personal Decision**:
 
-For this guide, we've chosen to disable key expiry on the Raspberry Pi. This decision aligns with our goal of maintaining continuous service in a trusted, private environment.
+For this guide and my own Pi, I've chosen to disable key expiry on the Raspberry Pi. This decision aligns with my goal of maintaining continuous service in a trusted, private environment.
 
-**What Should You Choose?**
+**Which Should You Choose?**
 
 - If your Raspberry Pi is in a **trusted, private environment**, then **disabling key expiry** can save you time and ensure uninterrupted operation.
 - If your Pi operates in a **shared or less secure environment**, then **keeping key expiry enabled** is a safer choice to protect your tailnet.
@@ -256,7 +256,7 @@ Ultimately, this decision depends on your use case, risk tolerance, and how comf
 
 **Security Considerations**:
 
-Security is a bit of a balancing act—like trying to walk a swaying tightrope between convenience and making sure our network doesn’t get hijacked. Disabling key expiry might make life easier for our always-on Raspberry Pi, but it’s also true that a little extra protection (like periodic reauthentication) can go a long way toward keeping things secure. 
+Security is a bit of a balancing act, like trying to walk a swaying tightrope between convenience and making sure our network doesn’t get hijacked. Disabling key expiry might make life easier for our always-on Raspberry Pi, but it’s also true that a little extra protection (like periodic reauthentication) can go a long way toward keeping things secure. 
 
 In the end, it's all about finding that sweet spot where security and convenience shake hands without tripping over each other-or, in our metaphor, without throwing off the balance of the whole thing, like trying to continue across that tightrope with one foot out of balance.
 
