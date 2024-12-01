@@ -18,6 +18,7 @@ Do you have a spare Raspberry Pi lying around just waiting for a fun project? Le
 - [Troubleshooting](#troubleshooting)
 - [Additional Notes](#additional-notes)
 - [Conclusion](#conclusion)
+- [License](#license)
 
 ---
 
@@ -352,4 +353,4 @@ Thank you for following along with me!
 
 ### License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Creative Commons License - see the [LICENSE](LICENSE) file for details.
