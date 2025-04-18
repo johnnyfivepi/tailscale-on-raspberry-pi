@@ -1,5 +1,15 @@
 # Raspberry Pi + Tailscale VPN & Exit Node Setup
 
+![Project Type](https://img.shields.io/badge/type-tutorial-blue)
+![Platform](https://img.shields.io/badge/device-Raspberry%20Pi-red)
+![OS](https://img.shields.io/badge/OS-Linux-lightgrey)
+![Tool](https://img.shields.io/badge/tool-Tailscale-yellow)
+![Category](https://img.shields.io/badge/category-VPN-purple)
+![Scope](https://img.shields.io/badge/scope-exit--node-orange)
+![Interface](https://img.shields.io/badge/interface-CLI--based-informational)
+![Audience](https://img.shields.io/badge/difficulty-beginner--friendly-success)
+![Status](https://img.shields.io/badge/status-complete-brightgreen)
+
 This is a step-by-step guide to setting up a Raspberry Pi as a Tailscale-powered exit node.
 
 🧠 This guide was featured by [Tailscale](https://tailscale.com) in their newsletter and on Twitter/X.
