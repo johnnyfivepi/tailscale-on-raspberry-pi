@@ -1,3 +1,46 @@
+# Raspberry Pi + Tailscale VPN & Exit Node Setup
+
+This is a step-by-step guide to setting up a Raspberry Pi as a Tailscale-powered exit node.
+
+🧠 This guide was featured by [Tailscale](https://tailscale.com) in their newsletter and on Twitter/X.
+
+---
+
+## 🧭 What You’ll Learn
+
+- How to install and configure Tailscale on a Raspberry Pi
+- How to set up an exit node for secure remote browsing
+- How to enable IP forwarding and firewall rules
+- How to verify your connection is working
+- Common troubleshooting tips and commands
+
+---
+
+## 📦 Requirements
+
+- Raspberry Pi 4 or 5
+- 32-bit Raspberry Pi OS (Bullseye)
+- Internet access and SSH/VNC setup
+
+---
+
+## 📋 Guide Outline
+
+1. Install Tailscale and authenticate  
+2. Understand and configure key expiry  
+3. Enable IP forwarding and advertise the exit node  
+4. Set the Raspberry Pi as an exit node in the Tailscale admin console  
+5. Verify setup and routing  
+6. Troubleshooting tips
+
+---
+
+## 🧠 Why I Wrote This
+
+After struggling to piece together multiple guides and docs, I decided to write a clear, complete walkthrough - one that (I hope) is friendly for both beginners and tinkerers. It’s now my go-to whenever I set up a new Pi on my network.
+
+---
+
 # Self-Hosting a VPN with Tailscale on a Raspberry Pi
 
 ### Purpose of this guide
