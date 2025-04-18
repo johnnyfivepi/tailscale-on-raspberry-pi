@@ -1,4 +1,4 @@
-# Raspberry Pi + Tailscale VPN & Exit Node Setup
+# Raspberry Pi + Tailscale VPN & Exit Node Setup 🧅
 
 ![Project Type](https://img.shields.io/badge/type-tutorial-blue)
 ![Platform](https://img.shields.io/badge/device-Raspberry%20Pi-red)
@@ -9,10 +9,11 @@
 ![Interface](https://img.shields.io/badge/interface-CLI--based-informational)
 ![Audience](https://img.shields.io/badge/difficulty-beginner--friendly-success)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
-
-This is a step-by-step guide to setting up a Raspberry Pi as a Tailscale-powered exit node.
+![Built With](https://img.shields.io/badge/built%20with-curiosity%20%26%20caffeine-ff69b4)
 
 🧠 This guide was featured by [Tailscale](https://tailscale.com) in their newsletter and on Twitter/X.
+
+A step-by-step walkthrough for turning a Raspberry Pi into a secure, Tailscale-powered VPN exit node — with beginner-friendly instructions, command-line guidance, and security considerations built right in.
 
 ---
 
@@ -31,6 +32,7 @@ This is a step-by-step guide to setting up a Raspberry Pi as a Tailscale-powered
 - Raspberry Pi 4 or 5
 - 32-bit Raspberry Pi OS (Bullseye)
 - Internet access and SSH/VNC setup
+- Tailscale account (free for personal use)
 
 ---
 
@@ -45,9 +47,61 @@ This is a step-by-step guide to setting up a Raspberry Pi as a Tailscale-powered
 
 ---
 
-## 🧠 Why I Wrote This
+## 🔧 Troubleshooting
 
-After struggling to piece together multiple guides and docs, I decided to write a clear, complete walkthrough - one that (I hope) is friendly for both beginners and tinkerers. It’s now my go-to whenever I set up a new Pi on my network.
+Ran into issues? Here are some common snags I hit — and how I got around them:
+
+- **DNS not resolving**: If MagicDNS conflicts with local settings, try temporarily disabling it or manually setting a public DNS (like `1.1.1.1`).
+- **NetworkManager vs. systemd-resolved**: These can clash over DNS settings — check out [Tailscale's Linux DNS docs](https://tailscale.com/kb/1188/linux-dns) for a fix.
+- **Can't SSH into the Pi via Tailscale IP**: Try using the device name instead (e.g., `pi@raspberrypi`).
+- **Exit node not routing traffic?**: Double-check IP forwarding is enabled and that the Pi is set as an exit node from the [Tailscale Admin Console](https://login.tailscale.com/admin/machines).
+
+📚 More resources:
+- [Tailscale Troubleshooting](https://tailscale.com/kb/1023/troubleshooting)
+- [Exit Nodes](https://tailscale.com/kb/1103/exit-nodes)
+- [MagicDNS](https://tailscale.com/kb/1081/magicdns)
+
+---
+
+## 💡 Why I Wrote This
+
+I wrote this guide because I wanted a secure, lightweight VPN I could trust — and I wanted to actually *understand* how it worked.
+
+After cobbling together info from different docs and forums, I decided to write the guide I wish I'd had: clear, beginner-friendly, and actually fun to follow.
+
+This project helped me dig deeper into networking, security, and Raspberry Pi tinkering — and it’s now something I use every day when I'm away from home.
+
+---
+
+## 🧭 Planned Enhancements
+
+- 🐧 Automate setup with a shell script
+- 🌐 Add optional MagicDNS configuration and usage steps
+- 📦 Include backup/restore instructions for long-term setups
+- 📝 Add printable command reference sheet for quick setup
+- 🎥 Maybe a video walkthrough someday!
+
+---
+
+## 🤝 Contributing
+
+Suggestions, improvements, or ideas? I'd love your input!
+
+- Open an [issue](https://github.com/johnnyfivepi/tailscale-vpn-guide/issues) or [submit a pull request](https://github.com/johnnyfivepi/tailscale-vpn-guide/pulls)
+- Found a better workaround for DNS or routing? Share it!
+- Friendly contributions are always welcome — even typo fixes
+
+---
+
+## 📄 License
+
+This guide is licensed under the [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/).
+
+Use it, share it, remix it — just link back here and give credit. ✌️
+
+---
+
+_Made with curiosity, coffee, and command-line trial & error ☕🖥️_
 
 ---
 
