@@ -1,5 +1,6 @@
 # Raspberry Pi + Tailscale VPN & Exit Node Setup 🧅
 
+![GitHub Repo stars](https://img.shields.io/github/stars/johnnyfivepi/tailscale-on-raspberry-pi?style=social)
 ![Project Type](https://img.shields.io/badge/type-tutorial-blue)
 ![Platform](https://img.shields.io/badge/device-Raspberry%20Pi-red)
 ![OS](https://img.shields.io/badge/OS-Linux-lightgrey)
