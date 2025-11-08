@@ -434,7 +434,7 @@ If you encounter any issues along the way, not to worry, as Tailscale has a fant
 - [MagicDNS - Tailscale](https://tailscale.com/kb/1081/magicdns)
 - [Route Traffic - Tailscale](https://tailscale.com/kb/1351/route)
 
-## ⚙️ Optional: Improve UDP forwarding performance
+### ⚙️ Optional: Improve UDP forwarding performance
 
 If you see a warning like:
 
@@ -492,7 +492,7 @@ To enable **UDP GRO forwarding** permanently:
    rx-udp-gro-forwarding: on
    ```
 
-Credit to [@brkdncr](https://gitlab.com/brkdncr) for surfacing this tip and sharing a reproducible service example ([Issue #1](https://gitlab.com/yourrepo/issues/1).
+Credit to [@brkdncr](https://gitlab.com/brkdncr) for surfacing this tip and sharing a reproducible service example ([Issue #1](https://github.com/johnnyfivepi/tailscale-on-raspberry-pi/issues/1)).
 
 ---
 
