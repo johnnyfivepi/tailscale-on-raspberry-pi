@@ -122,7 +122,7 @@ To enable **UDP GRO forwarding** permanently:
    rx-udp-gro-forwarding: on
    ```
 
-Credit to @brkdncr for surfacing this tip and sharing a reproducible service example (Issue #1).
+Credit to [@brkdncr](https://gitlab.com/brkdncr) for surfacing this tip and sharing a reproducible service example ([Issue #1](https://gitlab.com/yourrepo/issues/1).
 
 ---
 
