@@ -11,6 +11,8 @@
 ![Audience](https://img.shields.io/badge/difficulty-beginner--friendly-success)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
 ![Built With](https://img.shields.io/badge/built%20with-curiosity%20%26%20caffeine-ff69b4)
+![Last Updated](https://img.shields.io/badge/last%20updated-November%202025-blueviolet)
+
 
 🧠 This guide was featured by [Tailscale](https://tailscale.com) in their newsletter and on Twitter/X.
 
@@ -61,6 +63,66 @@ Ran into issues? Here are some common snags I hit — and how I got around them:
 - [Tailscale Troubleshooting](https://tailscale.com/kb/1023/troubleshooting)
 - [Exit Nodes](https://tailscale.com/kb/1103/exit-nodes)
 - [MagicDNS](https://tailscale.com/kb/1081/magicdns)
+
+## ⚙️ Optional: Improve UDP forwarding performance
+
+If you see a warning like:
+
+```
+Warning: UDP GRO forwarding is suboptimally configured on eth0,
+UDP forwarding throughput capability will increase with a configuration change.
+See https://tailscale.com/s/ethtool-config-udp-gro
+```
+
+This means your network interface can be tuned for better throughput when acting as an exit node.  
+It’s optional — your setup will still work without it.
+
+To enable **UDP GRO forwarding** permanently:
+
+1. Identify your primary interface:
+   ```bash
+   ip -o route get 8.8.8.8 | cut -f 5 -d " "
+   ```
+   (Commonly `eth0` on a Raspberry Pi.)
+
+2. Create a small systemd service:
+   ```bash
+   sudo nano /etc/systemd/system/udpgroforwarding.service
+   ```
+
+   Paste this in, replacing `eth0` with your interface name:
+   ```ini
+   [Unit]
+   Description=Enable UDP GRO Forwarding
+   Wants=network-online.target
+   After=network-online.target
+
+   [Service]
+   Type=oneshot
+   ExecStart=/sbin/ethtool -K eth0 rx-udp-gro-forwarding on rx-gro-list off
+
+   [Install]
+   WantedBy=multi-user.target
+   ```
+
+3. Reload systemd and enable the service:
+   ```bash
+   sudo systemctl daemon-reload
+   sudo systemctl enable --now udpgroforwarding
+   ```
+
+4. Reboot, then verify:
+   ```bash
+   ethtool -k eth0 | egrep "(gro-list|forwarding)"
+   ```
+
+   You should see:
+   ```
+   rx-gro-list: off
+   rx-udp-gro-forwarding: on
+   ```
+
+Credit to @brkdncr for surfacing this tip and sharing a reproducible service example (Issue #1).
 
 ---
 
@@ -430,7 +492,7 @@ From the Tailscale app on our other devices, we can now use the Raspberry Pi as 
 
 ---
 
-### Troubleshooting
+### Additional Troubleshooting Notes
 
 When I went through the process, there were a few places where I got tripped up temporarily:
 
