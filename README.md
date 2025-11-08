@@ -16,7 +16,7 @@
 
 🧠 This guide was featured by [Tailscale](https://tailscale.com) in their newsletter and on Twitter/X.
 
-A step-by-step walkthrough for turning a Raspberry Pi into a secure, Tailscale-powered VPN exit node — with beginner-friendly instructions, command-line guidance, and security considerations built right in.
+🔒 A beginner-friendly walkthrough for setting up a Raspberry Pi as a secure, self-hosted VPN exit node using [Tailscale](https://tailscale.com) — with clear command-line steps and privacy-focused configuration.
 
 ---
 
