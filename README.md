@@ -13,6 +13,10 @@
 ![Built With](https://img.shields.io/badge/built%20with-curiosity%20%26%20caffeine-ff69b4)
 ![Last Updated](https://img.shields.io/badge/last%20updated-November%202025-blueviolet)
 
+<p align="center">
+  <img src="assets/images/social-card.png" alt="Tailscale on Raspberry Pi" width="70%">
+</p>
+
 🧠 This guide was featured by [Tailscale](https://tailscale.com) in their newsletter and on Twitter/X.
 
 🔒 A beginner-friendly walkthrough for setting up a Raspberry Pi as a secure, self-hosted VPN exit node using [Tailscale](https://tailscale.com) — with clear command-line steps and privacy-focused configuration.
