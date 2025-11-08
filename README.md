@@ -13,6 +13,8 @@
 ![Built With](https://img.shields.io/badge/built%20with-curiosity%20%26%20caffeine-ff69b4)
 ![Last Updated](https://img.shields.io/badge/last%20updated-November%202025-blueviolet)
 
+![Tailscale on Raspberry Pi — Social Preview](assets/images/social-card.png)
+
 📖 View this guide online: [johnnyfivepi.github.io/tailscale-on-raspberry-pi](https://johnnyfivepi.github.io/tailscale-on-raspberry-pi/)
 
 🧠 This guide was featured by [Tailscale](https://tailscale.com) in their newsletter and on Twitter/X.
