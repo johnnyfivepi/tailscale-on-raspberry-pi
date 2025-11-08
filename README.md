@@ -50,82 +50,6 @@ A step-by-step walkthrough for turning a Raspberry Pi into a secure, Tailscale-p
 
 ---
 
-## 🔧 Troubleshooting
-
-Ran into issues? Here are some common snags I hit — and how I got around them:
-
-- **DNS not resolving**: If MagicDNS conflicts with local settings, try temporarily disabling it or manually setting a public DNS (like `1.1.1.1`).
-- **NetworkManager vs. systemd-resolved**: These can clash over DNS settings — check out [Tailscale's Linux DNS docs](https://tailscale.com/kb/1188/linux-dns) for a fix.
-- **Can't SSH into the Pi via Tailscale IP**: Try using the device name instead (e.g., `pi@raspberrypi`).
-- **Exit node not routing traffic?**: Double-check IP forwarding is enabled and that the Pi is set as an exit node from the [Tailscale Admin Console](https://login.tailscale.com/admin/machines).
-
-📚 More resources:
-- [Tailscale Troubleshooting](https://tailscale.com/kb/1023/troubleshooting)
-- [Exit Nodes](https://tailscale.com/kb/1103/exit-nodes)
-- [MagicDNS](https://tailscale.com/kb/1081/magicdns)
-
-## ⚙️ Optional: Improve UDP forwarding performance
-
-If you see a warning like:
-
-```
-Warning: UDP GRO forwarding is suboptimally configured on eth0,
-UDP forwarding throughput capability will increase with a configuration change.
-See https://tailscale.com/s/ethtool-config-udp-gro
-```
-
-This means your network interface can be tuned for better throughput when acting as an exit node.  
-It’s optional — your setup will still work without it.
-
-To enable **UDP GRO forwarding** permanently:
-
-1. Identify your primary interface:
-   ```bash
-   ip -o route get 8.8.8.8 | cut -f 5 -d " "
-   ```
-   (Commonly `eth0` on a Raspberry Pi.)
-
-2. Create a small systemd service:
-   ```bash
-   sudo nano /etc/systemd/system/udpgroforwarding.service
-   ```
-
-   Paste this in, replacing `eth0` with your interface name:
-   ```ini
-   [Unit]
-   Description=Enable UDP GRO Forwarding
-   Wants=network-online.target
-   After=network-online.target
-
-   [Service]
-   Type=oneshot
-   ExecStart=/sbin/ethtool -K eth0 rx-udp-gro-forwarding on rx-gro-list off
-
-   [Install]
-   WantedBy=multi-user.target
-   ```
-
-3. Reload systemd and enable the service:
-   ```bash
-   sudo systemctl daemon-reload
-   sudo systemctl enable --now udpgroforwarding
-   ```
-
-4. Reboot, then verify:
-   ```bash
-   ethtool -k eth0 | egrep "(gro-list|forwarding)"
-   ```
-
-   You should see:
-   ```
-   rx-gro-list: off
-   rx-udp-gro-forwarding: on
-   ```
-
-Credit to [@brkdncr](https://gitlab.com/brkdncr) for surfacing this tip and sharing a reproducible service example ([Issue #1](https://gitlab.com/yourrepo/issues/1).
-
----
-
 ## 💡 Why I Wrote This
 
 I wrote this guide because I wanted a secure, lightweight VPN I could trust — and I wanted to actually *understand* how it worked.
@@ -164,7 +88,7 @@ Use it, share it, remix it — just link back here and give credit. ✌️
 
 ---
 
-_Made with curiosity, coffee, and command-line trial & error ☕🖥️_
+_Made with curiosity, coffee, and command-line trial & error_ ☕🖥️
 
 ---
 
@@ -492,7 +416,7 @@ From the Tailscale app on our other devices, we can now use the Raspberry Pi as 
 
 ---
 
-### Additional Troubleshooting Notes
+### Troubleshooting
 
 When I went through the process, there were a few places where I got tripped up temporarily:
 
@@ -505,9 +429,70 @@ If you're unable to SSH into your Raspberry Pi using its Tailscale IP address, t
 If you encounter any issues along the way, not to worry, as Tailscale has a fantastic knowledgebase to help:
 - [FAQ - Tailscale](https://tailscale.com/kb/1366/faq)
 - [Troubleshooting - Tailscale](https://tailscale.com/kb/1023/troubleshooting)
+- [Exit Nodes](https://tailscale.com/kb/1103/exit-nodes)
 - [DNS in Tailscale - Tailscale](https://tailscale.com/kb/1054/dns)
 - [MagicDNS - Tailscale](https://tailscale.com/kb/1081/magicdns)
 - [Route Traffic - Tailscale](https://tailscale.com/kb/1351/route)
+
+## ⚙️ Optional: Improve UDP forwarding performance
+
+If you see a warning like:
+
+```
+Warning: UDP GRO forwarding is suboptimally configured on eth0,
+UDP forwarding throughput capability will increase with a configuration change.
+See https://tailscale.com/s/ethtool-config-udp-gro
+```
+
+This means your network interface can be tuned for better throughput when acting as an exit node.  
+It’s optional — your setup will still work without it.
+
+To enable **UDP GRO forwarding** permanently:
+
+1. Identify your primary interface:
+   ```bash
+   ip -o route get 8.8.8.8 | cut -f 5 -d " "
+   ```
+   (Commonly `eth0` on a Raspberry Pi.)
+
+2. Create a small systemd service:
+   ```bash
+   sudo nano /etc/systemd/system/udpgroforwarding.service
+   ```
+
+   Paste this in, replacing `eth0` with your interface name:
+   ```ini
+   [Unit]
+   Description=Enable UDP GRO Forwarding
+   Wants=network-online.target
+   After=network-online.target
+
+   [Service]
+   Type=oneshot
+   ExecStart=/sbin/ethtool -K eth0 rx-udp-gro-forwarding on rx-gro-list off
+
+   [Install]
+   WantedBy=multi-user.target
+   ```
+
+3. Reload systemd and enable the service:
+   ```bash
+   sudo systemctl daemon-reload
+   sudo systemctl enable --now udpgroforwarding
+   ```
+
+4. Reboot, then verify:
+   ```bash
+   ethtool -k eth0 | egrep "(gro-list|forwarding)"
+   ```
+
+   You should see:
+   ```
+   rx-gro-list: off
+   rx-udp-gro-forwarding: on
+   ```
+
+Credit to [@brkdncr](https://gitlab.com/brkdncr) for surfacing this tip and sharing a reproducible service example ([Issue #1](https://gitlab.com/yourrepo/issues/1).
 
 ---
 
