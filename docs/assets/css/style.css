@@ -36,14 +36,14 @@ p, li {
 
 img[alt="Tailscale on Raspberry Pi"] {
   display:block; margin:0 auto 1.5rem;
-  max-width:50%;
+  max-width:70%;
   border-radius:10px;
   box-shadow:0 6px 20px rgba(0,0,0,.15);
 }
 
 /* Keep content boxed and padded (Cayman-compatible) */
 .main-content {
-  max-width: 1000px;       /* 64rem ≈ 1024px is Cayman’s default — tweak to taste */
+  max-width: 800px;       /* 64rem ≈ 1024px is Cayman’s default — tweak to taste */
   margin-left: auto;
   margin-right: auto;
   padding-left: 24px;
@@ -59,7 +59,7 @@ img[alt="Tailscale on Raspberry Pi"] {
 .page-header .project-name,
 .page-header .project-tagline,
 .page-header .inner {
-  max-width: 1000px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 24px;
