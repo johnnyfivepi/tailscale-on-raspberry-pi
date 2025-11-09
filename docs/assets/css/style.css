@@ -23,14 +23,23 @@ body {
   background-color: #fff;
 }
 
-/* --- code blocks: use a lighter background --- */
-pre, code {
-  background-color: #f6f8fa;
-  border-radius: 6px;
-}
-
 p, li {
   font-size: 15px;
+}
+
+/* Wrap long code lines instead of overflowing */
+pre, code {
+  white-space: pre-wrap !important;
+  word-break: break-word;
+  overflow-x: auto; /* keeps scroll for super long commands but wraps by default */
+}
+
+/* Optional: make code blocks a little cleaner */
+pre {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  line-height: 1.5;
 }
 
 img[alt="Tailscale on Raspberry Pi"] {
