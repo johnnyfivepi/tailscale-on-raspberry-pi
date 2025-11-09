@@ -6,3 +6,9 @@ header {
 a, a:visited { color: #c51a4a; }
 a:hover { color: #e64c76; }
 
+img[alt="Tailscale on Raspberry Pi"] {
+  display:block; margin:0 auto 1.5rem;
+  max-width:80%;
+  border-radius:10px;
+  box-shadow:0 6px 20px rgba(0,0,0,.15);
+}
