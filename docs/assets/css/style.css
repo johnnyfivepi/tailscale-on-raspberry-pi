@@ -27,19 +27,44 @@ p, li {
   font-size: 16px;
 }
 
-/* Wrap long code lines instead of overflowing */
+/* --- Refined code block styling --- */
 pre, code {
-  white-space: pre-wrap !important;
-  word-break: break-word;
-  overflow-x: auto; /* keeps scroll for super long commands but wraps by default */
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #1a1a1a;
 }
 
-/* Optional: make code blocks a little cleaner */
+/* Inline code (within text) */
+code {
+  padding: 0.15em 0.35em;
+  background: #f2f3f5;
+  border-radius: 4px;
+}
+
+/* Block code (multiline commands) */
 pre {
-  background-color: #f8f9fa;
+  background-color: #fafafa;
+  border: 1px solid #e4e4e4;
   border-radius: 8px;
-  padding: 1rem;
-  line-height: 1.2;
+  padding: 0.9em 1em;
+  margin: 1.4em 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Optional: subtle dividers between lines */
+pre code {
+  display: block;
+  border-bottom: 1px solid #eee;
+  padding: 0.2em 0;
+}
+
+/* Remove the last divider */
+pre code:last-child {
+  border-bottom: none;
 }
 
 img[alt="Tailscale on Raspberry Pi"] {
