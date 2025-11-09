@@ -66,3 +66,26 @@ img[alt="Tailscale on Raspberry Pi"] {
   padding-right: 24px;
 }
 
+/* Refine Cayman's top header bar */
+.page-header {
+  background-color: #1f2937; /* match your site’s dark gray */
+  color: #ffffff;
+  border-bottom: 4px solid #c51a4a; /* subtle Raspberry Pi red accent */
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Refine title and subtitle inside the header */
+.page-header .project-name {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+.page-header .project-tagline {
+  color: #d1d5db;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: 0;
+}
