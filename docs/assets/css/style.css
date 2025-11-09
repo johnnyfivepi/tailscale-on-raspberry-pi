@@ -12,19 +12,19 @@ h2 { font-size: 1.4em; }
 h3 { font-size: 1.2em; }
 h1, h2, h3 {
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.20;
 }
 
 /* --- overall body adjustments --- */
 body {
-  font-size: 15px;               /* a touch smaller */
+  font-size: 16px;               /* a touch smaller */
   line-height: 1.2;
   color: #222;                   /* softer black for easier reading */
   background-color: #fff;
 }
 
 p, li {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 /* Wrap long code lines instead of overflowing */
@@ -39,7 +39,7 @@ pre {
   background-color: #f8f9fa;
   border-radius: 8px;
   padding: 1rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 img[alt="Tailscale on Raspberry Pi"] {
