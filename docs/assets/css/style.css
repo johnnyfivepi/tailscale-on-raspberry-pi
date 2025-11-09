@@ -36,7 +36,7 @@ p, li {
 
 img[alt="Tailscale on Raspberry Pi"] {
   display:block; margin:0 auto 1.5rem;
-  max-width:70%;
+  max-width:100%;
   border-radius:10px;
   box-shadow:0 6px 20px rgba(0,0,0,.15);
 }
