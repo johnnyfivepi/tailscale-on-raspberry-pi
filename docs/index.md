@@ -12,7 +12,7 @@
 ![Last Updated](https://img.shields.io/badge/last%20updated-November%202025-blueviolet)
 
 <p align="center">
-  <img src="assets/images/social-card.png" alt="Tailscale on Raspberry Pi" width="70%">
+  <img src="assets/images/social-card.png" alt="Tailscale on Raspberry Pi" width="50%">
 </p>
 
 🧠 This guide was featured by [Tailscale](https://tailscale.com) in their newsletter and on Twitter/X.
