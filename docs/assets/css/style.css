@@ -6,9 +6,63 @@ header {
 a, a:visited { color: #c51a4a; }
 a:hover { color: #e64c76; }
 
+/* --- heading sizes (slightly reduced for balance) --- */
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.4em; }
+h3 { font-size: 1.2em; }
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* --- overall body adjustments --- */
+body {
+  font-size: 15px;               /* a touch smaller */
+  line-height: 1.6;
+  color: #222;                   /* softer black for easier reading */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #fff;
+}
+
+/* --- code blocks: use a lighter background --- */
+pre, code {
+  background-color: #f6f8fa;
+  border-radius: 6px;
+}
+
+p, li {
+  font-size: 15px;
+}
+
 img[alt="Tailscale on Raspberry Pi"] {
   display:block; margin:0 auto 1.5rem;
-  max-width:80%;
+  max-width:50%;
   border-radius:10px;
   box-shadow:0 6px 20px rgba(0,0,0,.15);
 }
+
+/* Keep content boxed and padded (Cayman-compatible) */
+.main-content {
+  max-width: 1000px;       /* 64rem ≈ 1024px is Cayman’s default — tweak to taste */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Make sure images don’t blow past the box */
+.main-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header .project-name,
+.page-header .project-tagline,
+.page-header .inner {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
