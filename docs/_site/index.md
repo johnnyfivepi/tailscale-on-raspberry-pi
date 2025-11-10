@@ -281,7 +281,7 @@ Now we're ready to start the fun part!
 
 ### Setting up Tailscale on Raspberry Pi
 
-**1. Install Tailscale**
+**1. Install Tailscale**:
 
    - In terminal, run the following command to automatically download and install Tailscale:
 
