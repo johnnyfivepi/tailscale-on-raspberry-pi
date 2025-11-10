@@ -25,9 +25,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=02f67b8d60b771c625d1b67fd8130dff34e3cfe1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=d5f139eb8f176587f80617439be596797a33067f">
     <!-- Custom stylesheet link (make sure it's compiled from assets/css/style.scss) -->
-<link rel="stylesheet" href="/assets/css/style.css?v=02f67b8d60b771c625d1b67fd8130dff34e3cfe1">
+<link rel="stylesheet" href="/assets/css/style.css?v=d5f139eb8f176587f80617439be596797a33067f">
   </head>
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
@@ -136,6 +136,100 @@
 </ul>
 
 <hr />
+<p><a id="run-this-site-locally"></a></p>
+
+<h2 id="-run-this-site-locally-preview-before-pushing">🧩 Run this site locally (preview before pushing)</h2>
+
+<blockquote>
+  <p>💡 <strong>Note:</strong> Run all commands from your local terminal (VS Code → View → Terminal).</p>
+</blockquote>
+
+<p>You can preview this GitHub Pages site locally using <strong>Jekyll</strong> — the same engine GitHub uses — so you don’t have to commit every tiny CSS tweak like I did. 🫠</p>
+
+<h3 id="-option-a-ruby--bundler-recommended">🔧 Option A: Ruby + Bundler (recommended)</h3>
+
+<ol>
+  <li>
+    <p><strong>Install Bundler</strong> (macOS/Linux):</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   gem <span class="nb">install </span>bundler
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Add a Gemfile</strong> in the <code class="language-plaintext highlighter-rouge">docs/</code> folder:</p>
+
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># docs/Gemfile</span>
+ <span class="n">source</span> <span class="s2">"https://rubygems.org"</span>
+
+ <span class="n">gem</span> <span class="s2">"github-pages"</span><span class="p">,</span> <span class="ss">group: :jekyll_plugins</span>
+ <span class="n">gem</span> <span class="s2">"webrick"</span> <span class="c1"># required on Ruby 3+</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Install and serve</strong>:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cd </span>docs
+ bundle <span class="nb">install
+ </span>bundle <span class="nb">exec </span>jekyll serve <span class="nt">--livereload</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Open the site</strong>:</p>
+
+    <ul>
+      <li>http://127.0.0.1:4000</li>
+    </ul>
+  </li>
+</ol>
+
+<blockquote>
+  <p>Tip: leave the server running — edits to Markdown, CSS, and images will auto-reload.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="-option-b-docker-no-local-ruby-needed">🐋 Option B: Docker (no local Ruby needed)</h3>
+
+<ol>
+  <li>
+    <p>From the <strong>repo root</strong>, run:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">--rm</span> <span class="nt">-it</span> <span class="nt">-p</span> 4000:4000 <span class="nt">-v</span> <span class="s2">"</span><span class="nv">$PWD</span><span class="s2">"</span>:/srv/jekyll jekyll/jekyll <span class="se">\</span>
+jekyll serve <span class="nt">--source</span> docs <span class="nt">--livereload</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Open the site</strong>:</p>
+
+    <ul>
+      <li>http://127.0.0.1:4000</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="-troubleshooting-running-the-site-locally">🧹 Troubleshooting running the site locally</h3>
+
+<ul>
+  <li>
+    <p><strong>Could not locate Gemfile</strong><br />
+Make sure the file exists at <code class="language-plaintext highlighter-rouge">docs/Gemfile</code> and you ran commands from <code class="language-plaintext highlighter-rouge">docs/</code>.</p>
+  </li>
+  <li>
+    <p><strong>CSS not updating</strong><br />
+If the browser is caching, hard-reload or open a private window.<br />
+If needed, stop and restart the Jekyll server.</p>
+  </li>
+  <li>
+    <p><strong>Port already in use</strong><br />
+Try a different port:</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve <span class="nt">--livereload</span> <span class="nt">--port</span> 4001
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<hr />
 
 <h2 id="-license">📄 License</h2>
 
@@ -179,6 +273,7 @@
   <li><a href="#troubleshooting">Troubleshooting</a></li>
   <li><a href="#additional-notes">Additional Notes</a></li>
   <li><a href="#conclusion">Conclusion</a></li>
+  <li><a href="#support-this-project">Support this project</a></li>
   <li><a href="#license">License</a></li>
 </ul>
 
@@ -676,7 +771,7 @@ rx-udp-gro-forwarding: on
   </li>
 </ol>
 
-<p>Credit to <a href="https://gitlab.com/brkdncr">@brkdncr</a> for surfacing this tip and sharing a reproducible service example (<a href="https://github.com/johnnyfivepi/tailscale-on-raspberry-pi/issues/1">Issue #1</a>).</p>
+<p>Credit to <a href="https://github.com/brkdncr">@brkdncr</a> for surfacing this tip and sharing a reproducible service example (<a href="https://github.com/johnnyfivepi/tailscale-on-raspberry-pi/issues/1">Issue #1</a>).</p>
 
 <hr />
 
@@ -693,6 +788,13 @@ rx-udp-gro-forwarding: on
 <h3 id="conclusion">Conclusion</h3>
 
 <p>Self-hosting a VPN (and setting up an exit node) with Tailscale on a Raspberry Pi is not only fun but also a great way to improve your privacy and security while browsing the internet. If you’re interested in building a similar setup or want to ask questions about the process as I experienced it, feel free to leave a comment or reach out.</p>
+
+<hr />
+
+<p><strong>Maintainer note:</strong> Want to edit or contribute to this guide?<br />
+See <a href="#run-this-site-locally">🧩 Run this site locally</a> for setup instructions.</p>
+
+<hr />
 
 <h3 id="support-this-project">Support this project</h3>
 

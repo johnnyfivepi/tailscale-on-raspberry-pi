@@ -82,6 +82,79 @@ Suggestions, improvements, or ideas? I'd love your input!
 - Friendly contributions are always welcome — even typo fixes
 
 ---
+<a id="run-this-site-locally"></a>
+
+## 🧩 Run this site locally (preview before pushing)
+
+> 💡 **Note:** Run all commands from your local terminal (VS Code → View → Terminal).
+
+You can preview this GitHub Pages site locally using **Jekyll** — the same engine GitHub uses — so you don’t have to commit every tiny CSS tweak like I did. 🫠
+
+### 🔧 Option A: Ruby + Bundler (recommended)
+
+1. **Install Bundler** (macOS/Linux):
+
+      ```bash
+      gem install bundler
+      ```
+
+2. **Add a Gemfile** in the `docs/` folder:
+
+    ```ruby
+    # docs/Gemfile
+    source "https://rubygems.org"
+
+    gem "github-pages", group: :jekyll_plugins
+    gem "webrick" # required on Ruby 3+
+    ```
+
+3. **Install and serve**:
+
+    ```bash
+    cd docs
+    bundle install
+    bundle exec jekyll serve --livereload
+    ```
+
+4. **Open the site**:
+
+    - http://127.0.0.1:4000
+
+  > Tip: leave the server running — edits to Markdown, CSS, and images will auto-reload.
+
+---
+
+### 🐋 Option B: Docker (no local Ruby needed)
+
+1.  From the **repo root**, run:
+
+    ```bash
+    docker run --rm -it -p 4000:4000 -v "$PWD":/srv/jekyll jekyll/jekyll \
+    jekyll serve --source docs --livereload
+    ```
+
+2. **Open the site**: 
+
+     - http://127.0.0.1:4000
+
+---
+
+### 🧹 Troubleshooting running the site locally
+
+- **Could not locate Gemfile**  
+  Make sure the file exists at `docs/Gemfile` and you ran commands from `docs/`.
+
+- **CSS not updating**  
+  If the browser is caching, hard-reload or open a private window.  
+  If needed, stop and restart the Jekyll server.
+
+- **Port already in use**  
+  Try a different port:
+  ```bash
+  bundle exec jekyll serve --livereload --port 4001
+  ```
+
+---
 
 ## 📄 License
 
@@ -121,6 +194,7 @@ Do you have a spare Raspberry Pi lying around just waiting for a fun project? If
 - [Troubleshooting](#troubleshooting)
 - [Additional Notes](#additional-notes)
 - [Conclusion](#conclusion)
+- [Support this project](#support-this-project)
 - [License](#license)
 
 ---
@@ -488,7 +562,7 @@ To enable **UDP GRO forwarding** permanently:
    rx-udp-gro-forwarding: on
    ```
 
-Credit to [@brkdncr](https://gitlab.com/brkdncr) for surfacing this tip and sharing a reproducible service example ([Issue #1](https://github.com/johnnyfivepi/tailscale-on-raspberry-pi/issues/1)).
+Credit to [@brkdncr](https://github.com/brkdncr) for surfacing this tip and sharing a reproducible service example ([Issue #1](https://github.com/johnnyfivepi/tailscale-on-raspberry-pi/issues/1)).
 
 ---
 
@@ -503,6 +577,13 @@ Credit to [@brkdncr](https://gitlab.com/brkdncr) for surfacing this tip and shar
 ### Conclusion
 
 Self-hosting a VPN (and setting up an exit node) with Tailscale on a Raspberry Pi is not only fun but also a great way to improve your privacy and security while browsing the internet. If you're interested in building a similar setup or want to ask questions about the process as I experienced it, feel free to leave a comment or reach out.
+
+---
+
+**Maintainer note:** Want to edit or contribute to this guide?  
+See [🧩 Run this site locally](#run-this-site-locally) for setup instructions.
+
+---
 
 ### Support this project
 
