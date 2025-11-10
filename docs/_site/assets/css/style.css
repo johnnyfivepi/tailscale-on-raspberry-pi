@@ -324,7 +324,6 @@ a:hover { text-decoration: underline; }
 
 .site-footer-credits { color: #819198; }
 
-/* @import "jekyll-theme-cayman";  // also fine if theme: jekyll-theme-cayman is in _config.yml */
 /* Your overrides below */
 .page-header { border-bottom: 4px solid #c51a4a; }
 

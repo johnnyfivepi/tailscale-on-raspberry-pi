@@ -2,8 +2,7 @@
 ---
 
 /* Either form works. If your editor hates the Liquid var, hardcode the theme name. */
-@import "jekyll-theme-cayman";
-/* @import "{{ site.theme }}";  // also fine if theme: jekyll-theme-cayman is in _config.yml */
+@import "{{ site.theme }}";  // also fine if theme: jekyll-theme-cayman is in _config.yml */
 
 /* Your overrides below */
 .page-header { border-bottom: 4px solid #c51a4a; }
