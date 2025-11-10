@@ -516,7 +516,7 @@ Thank you, reader, for following along with me!
 
 ☕ If this guide helped you, or you simply enjoyed it, you can buy me a coffee on Ko-fi:
 
-<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a coffee on Ko-fi', '#c51a4a', 'A0A41O8776');kofiwidget2.draw();</script> 
+<a href='https://ko-fi.com/A0A41O8776' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ---
 
