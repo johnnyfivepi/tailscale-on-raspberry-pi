@@ -508,15 +508,16 @@ Credit to [@brkdncr](https://gitlab.com/brkdncr) for surfacing this tip and shar
 
 ### Conclusion
 
-Self-hosting a VPN (and setting up an exit node) with Tailscale on a Raspberry Pi is not only fun but also a great way to improve your privacy and security while browsing the internet. If you're interested in building a similar setup or want to ask questions about the process as I experienced it, feel free to leave a comment or reach out to me!
+Self-hosting a VPN (and setting up an exit node) with Tailscale on a Raspberry Pi is not only fun but also a great way to improve your privacy and security while browsing the internet. If you're interested in building a similar setup or want to ask questions about the process as I experienced it, feel free to leave a comment or reach out!
 
 Thank you, reader, for following along with me!  
 
 \(^-^)/
 
-☕ If this guide helped you, you can buy me a coffee for $5 on Ko-fi:
+☕ If this guide helped you or you enjoyed it, you can buy me a coffee for $5 on Ko-fi:
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A41O8776)
+
 ---
 
 ### License
