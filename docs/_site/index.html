@@ -25,9 +25,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=d5f139eb8f176587f80617439be596797a33067f">
+    <link rel="stylesheet" href="/assets/css/style.css?v=8a7aac46b70196361af40bea9236cc103e355c5e">
     <!-- Custom stylesheet link (make sure it's compiled from assets/css/style.scss) -->
-<link rel="stylesheet" href="/assets/css/style.css?v=d5f139eb8f176587f80617439be596797a33067f">
+<link rel="stylesheet" href="/assets/css/style.css?v=8a7aac46b70196361af40bea9236cc103e355c5e">
   </head>
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
@@ -56,10 +56,15 @@
 <img src="https://img.shields.io/badge/last%20updated-November%202025-blueviolet" alt="Last Updated" /></p>
 
 <p align="center">
-  <img src="assets/images/social-card.png" alt="Tailscale on Raspberry Pi" width="80%" />
+  <img src="assets/images/social-card.png" alt="Tailscale on Raspberry Pi" width="100%" />
 </p>
 
 <p>🧠 <em>This guide was featured by <a href="https://tailscale.com">Tailscale</a> in their newsletter and on Twitter/X.</em></p>
+
+<blockquote class="note" style="border-left:4px solid #c51a4a; background:#fafafa; padding:0.6rem 1rem;">
+🪄 <strong>Ready to dive in?</strong> Jump straight to the 
+<a href="#self-hosting-a-vpn-with-tailscale-on-a-raspberry-pi">Tailscale setup guide ↓</a>
+</blockquote>
 
 <p>🔒 A beginner-friendly walkthrough for setting up a Raspberry Pi as a secure, self-hosted VPN exit node using <a href="https://tailscale.com">Tailscale</a> — with clear command-line steps and privacy-focused configuration.</p>
 
@@ -237,8 +242,6 @@ Try a different port:</p>
 
 <p>Use it, share it, remix it — just link back here and give credit. ✌️</p>
 
-<hr />
-
 <p><em>Made with curiosity, coffee, and command-line trial &amp; error</em> ☕🖥️</p>
 
 <hr />
@@ -255,7 +258,7 @@ Try a different port:</p>
 
 <hr />
 
-<h3 id="table-of-contents">Table of Contents</h3>
+<h2 id="table-of-contents">Table of Contents</h2>
 
 <ul>
   <li><a href="#introduction">Introduction</a></li>
@@ -289,6 +292,8 @@ Try a different port:</p>
 
 <p><strong>Note:</strong> Going through this process yesterday was relatively quick, but I wanted to make sure I understood what I was doing, what I was observing, and what speed-bumps I might have been accidentally speeding over. While catching some air was fun for all but the metaphorical vehicle’s suspension, we’ll slow down a bit in this guide, taking it step by step, ensuring we understand the process, and troubleshooting any bumps along the way.</p>
 
+<p><a href="#table-of-contents" class="back-to-top">↑ Back to top</a></p>
+
 <hr />
 
 <h3 id="prerequisites">Prerequisites</h3>
@@ -303,11 +308,17 @@ Try a different port:</p>
   <li><strong>A computer or device to interact with the Raspberry Pi</strong>: You’ll need to connect to your Pi via SSH or directly using a monitor and keyboard. I used the command line to SSH into my Raspberry Pi, as I don’t have an extra keyboard, mouse, or display.</li>
 </ul>
 
+<p><a href="#table-of-contents" class="back-to-top">↑ Back to top</a></p>
+
 <hr />
 
 <h3 id="preparing-your-raspberry-pi">Preparing your Raspberry Pi</h3>
 
 <p>If you already know how to flash your microSD card with Raspberry Pi OS, you can skip ahead to the next section. For those of us who prefer a quick refresher or are new to this, let’s go over how to flash our microSD card with a Raspberry Pi OS!</p>
+
+<p><a href="#table-of-contents" class="back-to-top">↑ Back to top</a></p>
+
+<hr />
 
 <h3 id="flashing-the-microsd-card">Flashing the microSD Card</h3>
 
@@ -388,6 +399,10 @@ Try a different port:</p>
 
 <p>With that, we’re ready to SSH into our Raspberry Pi and start setting up Tailscale!</p>
 
+<p><a href="#table-of-contents" class="back-to-top">↑ Back to top</a></p>
+
+<hr />
+
 <h3 id="using-ssh-to-connect-to-your-raspberry-pi">Using SSH to connect to your Raspberry Pi</h3>
 
 <ol>
@@ -425,6 +440,8 @@ Try a different port:</p>
     </ul>
   </li>
 </ol>
+
+<p><a href="#table-of-contents" class="back-to-top">↑ Back to top</a></p>
 
 <hr />
 
@@ -512,6 +529,8 @@ Try a different port:</p>
 
 <p>Now we’re ready to start the fun part!</p>
 
+<p><a href="#table-of-contents" class="back-to-top">↑ Back to top</a></p>
+
 <hr />
 
 <h3 id="setting-up-tailscale-on-raspberry-pi">Setting up Tailscale on Raspberry Pi</h3>
@@ -557,6 +576,8 @@ See Tailscale’s <a href="https://tailscale.com/download">manual installation i
 </ul>
 
 <p><strong>High five!</strong> We’ve successfully installed and authenticated Tailscale on our Raspberry Pi, and located our Pi’s IPv4 address! Another excuse to stand up, stretch our legs, and treat ourselves to some celebratory noms!</p>
+
+<p><a href="#table-of-contents" class="back-to-top">↑ Back to top</a></p>
 
 <hr />
 
@@ -629,6 +650,8 @@ See Tailscale’s <a href="https://tailscale.com/download">manual installation i
 
 <p><a href="https://tailscale.com/kb/1028/key-expiry">Learn more about key expiry directly from Tailscale</a>.</p>
 
+<p><a href="#table-of-contents" class="back-to-top">↑ Back to top</a></p>
+
 <hr />
 
 <h3 id="configuring-the-raspberry-pi-as-an-exit-node">Configuring the Raspberry Pi as an Exit Node</h3>
@@ -689,6 +712,8 @@ See Tailscale’s <a href="https://tailscale.com/download">manual installation i
 </ol>
 
 <p>From the Tailscale app on our other devices, we can now use the Raspberry Pi as an exit node for secure traffic routing. Tailscale has us covered with step-by-step instructions on <strong><a href="https://tailscale.com/kb/1408/quick-guide-exit-nodes#use-an-exit-node">how to use an exit node</a></strong> depending on the type of device.</p>
+
+<p><a href="#table-of-contents" class="back-to-top">↑ Back to top</a></p>
 
 <hr />
 
@@ -773,6 +798,8 @@ rx-udp-gro-forwarding: on
 
 <p>Credit to <a href="https://github.com/brkdncr">@brkdncr</a> for surfacing this tip and sharing a reproducible service example (<a href="https://github.com/johnnyfivepi/tailscale-on-raspberry-pi/issues/1">Issue #1</a>).</p>
 
+<p><a href="#table-of-contents" class="back-to-top">↑ Back to top</a></p>
+
 <hr />
 
 <h3 id="additional-notes">Additional notes</h3>
@@ -783,11 +810,15 @@ rx-udp-gro-forwarding: on
   <li>I started this project not just as a technical challenge, but also to explore networking, privacy, and security as I work toward growing my tech skills.</li>
 </ul>
 
+<p><a href="#table-of-contents" class="back-to-top">↑ Back to top</a></p>
+
 <hr />
 
 <h3 id="conclusion">Conclusion</h3>
 
 <p>Self-hosting a VPN (and setting up an exit node) with Tailscale on a Raspberry Pi is not only fun but also a great way to improve your privacy and security while browsing the internet. If you’re interested in building a similar setup or want to ask questions about the process as I experienced it, feel free to leave a comment or reach out.</p>
+
+<p><a href="#table-of-contents" class="back-to-top">↑ Back to top</a></p>
 
 <hr />
 
@@ -817,6 +848,8 @@ See <a href="#run-this-site-locally">🧩 Run this site locally</a> for setup in
     'floating-chat.donateButton.text-color': '#fff'
   });
 </script>
+
+<p><a href="#table-of-contents" class="back-to-top">↑ Back to top</a></p>
 
 <hr />
 

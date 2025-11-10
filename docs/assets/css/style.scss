@@ -197,3 +197,16 @@ blockquote pre {
   border-radius: 10px;
   box-shadow: 0 6px 20px rgba(0,0,0,.15);
 }
+
+a.back-to-top {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: none;
+}
+
+a.back-to-top:hover {
+  color: #c51a4a;
+  text-decoration: underline;
+}

@@ -12,10 +12,15 @@
 ![Last Updated](https://img.shields.io/badge/last%20updated-November%202025-blueviolet)
 
 <p align="center">
-  <img src="assets/images/social-card.png" alt="Tailscale on Raspberry Pi" width="80%">
+  <img src="assets/images/social-card.png" alt="Tailscale on Raspberry Pi" width="100%">
 </p>
 
 🧠 _This guide was featured by [Tailscale](https://tailscale.com) in their newsletter and on Twitter/X._
+
+<blockquote class="note" style="border-left:4px solid #c51a4a; background:#fafafa; padding:0.6rem 1rem;">
+🪄 <strong>Ready to dive in?</strong> Jump straight to the 
+<a href="#self-hosting-a-vpn-with-tailscale-on-a-raspberry-pi">Tailscale setup guide ↓</a>
+</blockquote>
 
 🔒 A beginner-friendly walkthrough for setting up a Raspberry Pi as a secure, self-hosted VPN exit node using [Tailscale](https://tailscale.com) — with clear command-line steps and privacy-focused configuration.
 
@@ -162,8 +167,6 @@ This guide is licensed under the [Creative Commons Attribution 4.0 License](http
 
 Use it, share it, remix it — just link back here and give credit. ✌️
 
----
-
 _Made with curiosity, coffee, and command-line trial & error_ ☕🖥️
 
 ---
@@ -180,7 +183,7 @@ Do you have a spare Raspberry Pi lying around just waiting for a fun project? If
 
 ---
 
-### Table of Contents
+## Table of Contents
 
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
@@ -209,6 +212,8 @@ Tailscale creates a private network called a **tailnet**, built on top of WireGu
 
 **Note:** Going through this process yesterday was relatively quick, but I wanted to make sure I understood what I was doing, what I was observing, and what speed-bumps I might have been accidentally speeding over. While catching some air was fun for all but the metaphorical vehicle's suspension, we'll slow down a bit in this guide, taking it step by step, ensuring we understand the process, and troubleshooting any bumps along the way.
 
+[↑ Back to top](#table-of-contents){: .back-to-top }
+
 ---
 
 ### Prerequisites
@@ -221,11 +226,17 @@ Before we dive into setting up Tailscale and our exit node on the Raspberry Pi, 
 - **A Tailscale account**: We’ll need this to connect our Raspberry Pi and other devices to our private network. If you don’t already have an account, [you can sign up for free](https://tailscale.com/pricing?plan=personal)!
 - **A computer or device to interact with the Raspberry Pi**: You'll need to connect to your Pi via SSH or directly using a monitor and keyboard. I used the command line to SSH into my Raspberry Pi, as I don't have an extra keyboard, mouse, or display.
 
+[↑ Back to top](#table-of-contents){: .back-to-top }
+
 ---
 
 ### Preparing your Raspberry Pi
 
 If you already know how to flash your microSD card with Raspberry Pi OS, you can skip ahead to the next section. For those of us who prefer a quick refresher or are new to this, let's go over how to flash our microSD card with a Raspberry Pi OS!
+
+[↑ Back to top](#table-of-contents){: .back-to-top }
+
+---
 
 ### Flashing the microSD Card 
 
@@ -253,7 +264,6 @@ If you already know how to flash your microSD card with Raspberry Pi OS, you can
    - c. In the **Services** tab:
        - Make sure to check **Enable SSH**.
        - Choose the option to **Use password authentication**.
-   
    - d. In the **Options** tab:
        - Select any of the options you'd like. I only checked **Eject media when finished**, but which options you choose or don't is completely up to you.
    - e. Click the **Save** button.
@@ -270,6 +280,10 @@ If you already know how to flash your microSD card with Raspberry Pi OS, you can
    - Once the writing and verifying are complete, **eject the microSD card** and insert it into your Raspberry Pi.
 
 With that, we’re ready to SSH into our Raspberry Pi and start setting up Tailscale!
+
+[↑ Back to top](#table-of-contents){: .back-to-top }
+
+---
 
 ### Using SSH to connect to your Raspberry Pi
 
@@ -292,6 +306,8 @@ With that, we’re ready to SSH into our Raspberry Pi and start setting up Tails
 4. **Confirm the connection**:
 
    - After logging in, you’ll be at the Raspberry Pi’s command prompt, ready to run commands.
+
+[↑ Back to top](#table-of-contents){: .back-to-top }
 
 ---
 
@@ -351,6 +367,8 @@ Before moving forward, it’s a good practice to update our Raspberry Pi’s sof
 
 Now we're ready to start the fun part!
 
+[↑ Back to top](#table-of-contents){: .back-to-top }
+
 ---
 
 ### Setting up Tailscale on Raspberry Pi
@@ -385,6 +403,8 @@ Now we're ready to start the fun part!
         ```
 
 **High five!** We've successfully installed and authenticated Tailscale on our Raspberry Pi, and located our Pi's IPv4 address! Another excuse to stand up, stretch our legs, and treat ourselves to some celebratory noms!
+
+[↑ Back to top](#table-of-contents){: .back-to-top }
 
 ---
 
@@ -433,6 +453,8 @@ Security is a bit of a balancing act, like trying to walk a swaying tightrope be
 In the end, it's all about finding that sweet spot where security and convenience shake hands without tripping over each other-or, in our metaphor, without throwing off the balance of the whole thing, like trying to continue across that tightrope with one foot out of balance.
 
 [Learn more about key expiry directly from Tailscale](https://tailscale.com/kb/1028/key-expiry).
+
+[↑ Back to top](#table-of-contents){: .back-to-top }
 
 ---
 
@@ -483,6 +505,8 @@ When you're ready, SSH into your Raspberry Pi and follow these steps:
    - d. Check the box to **Use as exit node**, then choose **Save**.
 
 From the Tailscale app on our other devices, we can now use the Raspberry Pi as an exit node for secure traffic routing. Tailscale has us covered with step-by-step instructions on **[how to use an exit node](https://tailscale.com/kb/1408/quick-guide-exit-nodes#use-an-exit-node)** depending on the type of device.
+
+[↑ Back to top](#table-of-contents){: .back-to-top }
 
 ---
 
@@ -564,6 +588,8 @@ To enable **UDP GRO forwarding** permanently:
 
 Credit to [@brkdncr](https://github.com/brkdncr) for surfacing this tip and sharing a reproducible service example ([Issue #1](https://github.com/johnnyfivepi/tailscale-on-raspberry-pi/issues/1)).
 
+[↑ Back to top](#table-of-contents){: .back-to-top }
+
 ---
 
 ### Additional notes
@@ -572,11 +598,15 @@ Credit to [@brkdncr](https://github.com/brkdncr) for surfacing this tip and shar
 - No logs are generated by Tailscale for your activity, thanks to the end-to-end encryption that comes with WireGuard. This makes it more secure and private by design.
 - I started this project not just as a technical challenge, but also to explore networking, privacy, and security as I work toward growing my tech skills.
 
+[↑ Back to top](#table-of-contents){: .back-to-top }
+
 ---
 
 ### Conclusion
 
 Self-hosting a VPN (and setting up an exit node) with Tailscale on a Raspberry Pi is not only fun but also a great way to improve your privacy and security while browsing the internet. If you're interested in building a similar setup or want to ask questions about the process as I experienced it, feel free to leave a comment or reach out.
+
+[↑ Back to top](#table-of-contents){: .back-to-top }
 
 ---
 
@@ -604,6 +634,8 @@ Thank you, reader, for following along with me!
     'floating-chat.donateButton.text-color': '#fff'
   });
 </script>
+
+[↑ Back to top](#table-of-contents){: .back-to-top }
 
 ---
 
