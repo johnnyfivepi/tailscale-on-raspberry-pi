@@ -402,3 +402,7 @@ blockquote pre { background-color: #fafafa !important; border: 1px solid #e4e4e4
 
 /* Optional: tighten .note itself a little */
 .note { margin-bottom: 0.75rem !important; }
+
+.hero-banner { text-align: center; margin: 1.25rem auto 2rem; }
+
+.hero-banner img { display: block; max-width: 960px; /* cap the size */ width: 100%; height: auto; border-radius: 10px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); }
