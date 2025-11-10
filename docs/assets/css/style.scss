@@ -1,3 +1,13 @@
+---
+---
+
+/* Either form works. If your editor hates the Liquid var, hardcode the theme name. */
+@import "jekyll-theme-cayman";
+/* @import "{{ site.theme }}";  // also fine if theme: jekyll-theme-cayman is in _config.yml */
+
+/* Your overrides below */
+.page-header { border-bottom: 4px solid #c51a4a; }
+
 /* Change Cayman header and link colors */
 header {
   background-color: #c51a4a;   /* Raspberry Pi red */
@@ -18,13 +28,29 @@ h1, h2, h3 {
 /* --- overall body adjustments --- */
 body {
   font-size: 16px;               /* a touch smaller */
-  line-height: 1.2;
+  line-height: 1.5;
   color: #222;                   /* softer black for easier reading */
   background-color: #fff;
 }
 
 p, li {
   font-size: 16px;
+}
+
+/* Fix alignment of blockquotes + code blocks inside list items */
+li > blockquote {
+  margin-left: 0.5rem; /* was usually ~2rem by default */
+  padding-left: 0.75rem;
+  border-left: 4px solid #e2e2e2;
+}
+
+li > blockquote + pre {
+  margin-left: 0; /* remove double indentation after blockquotes */
+}
+
+/* Optional: make all code blocks in lists line up consistently */
+li pre {
+  margin-left: 0;
 }
 
 /* --- Refined code block styling --- */
@@ -35,36 +61,36 @@ pre, code {
   color: #1a1a1a;
 }
 
-/* Inline code (within text) */
+/* Inline code stays subtle */
 code {
   padding: 0.15em 0.35em;
   background: #f2f3f5;
   border-radius: 4px;
 }
 
-/* Block code (multiline commands) */
+/* Use pre for the block; neutralize the inner code element */
 pre {
   background-color: #fafafa;
   border: 1px solid #e4e4e4;
   border-radius: 8px;
-  padding: 0.9em 1em;
-  margin: 1.4em 0;
+  padding: 0.9rem 1rem;
+  margin: 1.4rem 0;
   overflow-x: auto;
   white-space: pre-wrap;
   word-break: break-word;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 4px rgba(0,0,0,.04);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
-/* Optional: subtle dividers between lines */
+/* Remove inner padding/background so text aligns perfectly */
 pre code {
   display: block;
-  border-bottom: 1px solid #eee;
-  padding: 0.2em 0;
-}
-
-/* Remove the last divider */
-pre code:last-child {
-  border-bottom: none;
+  background: transparent !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 img[alt="Tailscale on Raspberry Pi"] {
@@ -121,4 +147,42 @@ img[alt="Tailscale on Raspberry Pi"] {
   font-size: 1.1rem;
   font-weight: 400;
   margin-top: 0;
+}
+
+/* Fix extra left padding when a code block follows a blockquote (the 💡 tip) */
+blockquote pre,
+blockquote pre code {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  background: transparent !important; /* let the pre supply the background */
+}
+
+/* Keep the same “gray card” look for that blockquote-adjacent code box */
+blockquote pre {
+  background-color: #fafafa !important;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+
+/* Friendly tip/admonition box (no blockquote quirks) */
+.note {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #c51a4a; /* Raspberry Pi red accent */
+  border-radius: 8px;
+  padding: .75rem 1rem;
+  margin: .5rem 0 1rem;
+}
+.note code { background: #f0f2f5; border-radius: 4px; padding: 0 .25em; }
+
+/* Fix spacing between .note and following code blocks */
+.note + pre {
+  margin-top: 0.75rem !important;
+}
+
+/* Optional: tighten .note itself a little */
+.note {
+  margin-bottom: 0.75rem !important;
 }

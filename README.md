@@ -17,7 +17,7 @@
   <img src="docs/assets/images/social-card.png" alt="Tailscale on Raspberry Pi" width="70%">
 </p>
 
-🧠 This guide was featured by [Tailscale](https://tailscale.com) in their newsletter and on Twitter/X.
+🧠 _This guide was featured by [Tailscale](https://tailscale.com) in their newsletter and on Twitter/X._
 
 🔒 A beginner-friendly walkthrough for setting up a Raspberry Pi as a secure, self-hosted VPN exit node using [Tailscale](https://tailscale.com) — with clear command-line steps and privacy-focused configuration.
 
@@ -81,7 +81,11 @@ Suggestions, improvements, or ideas? I'd love your input!
 
 - Open an [issue](https://github.com/johnnyfivepi/tailscale-vpn-guide/issues) or [submit a pull request](https://github.com/johnnyfivepi/tailscale-vpn-guide/pulls)
 - Found a better workaround for DNS or routing? Share it!
-- Friendly contributions are always welcome — even typo fixes
+- Friendly contributions are always welcome — even typo fixes!
+
+---
+
+## 🧩 Optional: Run This Site Locally
 
 ---
 
@@ -283,27 +287,20 @@ Now we're ready to start the fun part!
 
 ### Setting up Tailscale on Raspberry Pi
 
-For the purposes of our guide, I'll be providing the steps I took related to my chosen OS: Debian 12 (Bookworm). If you're using a different Raspberry Pi OS, **Tailscale's download page** provides [the steps for manually installing it on various Linux operating systems](https://tailscale.com/download/linux/).
+**1. Install Tailscale**:
 
-1. **Add Tailscale's package signing key and repo**:
+   - In terminal, run the following command to automatically download and install Tailscale:
 
-   - In terminal, run the following commands:
-
+        ```bash
+        curl -fsSL https://tailscale.com/install.sh | sh
         ```
-        curl -fsSL https://pkgs.tailscale.com/stable/debian/bookworm.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
-        curl -fsSL https://pkgs.tailscale.com/stable/debian/bookworm.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
-        ```
-    
-2. **Install Tailscale**: 
 
-   - Run:
+     💡 This official installer sets up the correct repository, imports the signing key, and installs Tailscale for your OS (including Raspberry Pi OS / Debian).
 
-        ```
-        sudo apt-get update
-        sudo apt-get install tailscale
-        ```
+     > Prefer a manual setup instead?  
+     > See Tailscale’s [manual installation instructions](https://tailscale.com/download) for your specific Linux distribution.
         
-3. **Authenticate Tailscale**:
+**2. Authenticate Tailscale**:
 
    - Once installed, connect your Raspberry Pi to your tailnet and authenticate:
 
@@ -311,7 +308,7 @@ For the purposes of our guide, I'll be providing the steps I took related to my 
         sudo tailscale up
         ```
 
-4. **Locate the Tailscale IPv4 address**:
+**3. Locate the Tailscale IPv4 address**:
 
    - To find your Raspberry Pi's new Tailscale IPv4 address, enter:
 

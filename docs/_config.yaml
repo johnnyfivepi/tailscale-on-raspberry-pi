@@ -1,6 +1,8 @@
 title: Tailscale on Raspberry Pi 🧅
 description: Step-by-step guide to setting up Tailscale and a secure VPN exit node on Raspberry Pi.
 theme: jekyll-theme-cayman
+sass:
+  style: compressed
 show_downloads: false
 github:
   is_project_page: true
