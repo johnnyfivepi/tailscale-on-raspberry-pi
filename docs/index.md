@@ -510,6 +510,16 @@ Thank you, reader, for following along with me!
 
 ---
 
+<p align="center">
+  <a href="https://ko-fi.com/johnnyfivepi" target="_blank">
+    <img src="https://storage.ko-fi.com/cdn/kofi5.png?v=3" 
+         alt="Buy Us a Coffee at ko-fi.com" 
+         style="height:45px; border:0; margin-top:1rem;">
+  </a>
+</p>
+
+---
+
 ### License
 
 This project is licensed under the Creative Commons License - see the [LICENSE](LICENSE) file for details.
