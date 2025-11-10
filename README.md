@@ -514,6 +514,18 @@ Thank you, reader, for following along with me!
 
 \(^-^)/
 
+☕ If this guide helped you, you can buy me a coffee for $5 on Ko-fi by clicking the `Support Me` button in the lower left.
+
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+  kofiWidgetOverlay.draw('johnnyfivepi', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support Me',
+    'floating-chat.donateButton.background-color': '#c51a4a',
+    'floating-chat.donateButton.text-color': '#fff'
+  });
+</script>
+
 ---
 
 ### License
