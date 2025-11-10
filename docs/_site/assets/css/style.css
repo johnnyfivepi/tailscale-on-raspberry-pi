@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* Either form works. If your editor hates the Liquid var, hardcode the theme name. */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
@@ -324,6 +323,7 @@ a:hover { text-decoration: underline; }
 
 .site-footer-credits { color: #819198; }
 
+/* load theme first */
 /* Your overrides below */
 .page-header { border-bottom: 4px solid #c51a4a; }
 

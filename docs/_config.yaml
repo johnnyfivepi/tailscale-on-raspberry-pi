@@ -1,13 +1,25 @@
 title: Tailscale on Raspberry Pi 🧅
 description: Step-by-step guide to setting up Tailscale and a secure VPN exit node on Raspberry Pi.
+
+# Load the Cayman theme
 theme: jekyll-theme-cayman
+
+# Ensure SCSS compiles properly and outputs compressed CSS
 sass:
   style: compressed
+
+# GitHub Pages and general site settings
 show_downloads: false
 github:
   is_project_page: true
+
+# Include folders that Jekyll should process even though they’re outside the defaults
 include:
   - assets
+
+# Plugins (jekyll-seo-tag is supported on GitHub Pages)
 plugins:
   - jekyll-seo-tag
+
+# Default image for SEO / social sharing cards
 image: /assets/images/social-card.png
