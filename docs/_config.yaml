@@ -23,3 +23,5 @@ plugins:
 
 # Default image for SEO / social sharing cards
 image: /assets/images/social-card.png
+
+incremental: false
