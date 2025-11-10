@@ -508,7 +508,9 @@ Thank you, reader, for following along with me!
 
 \(^-^)/
 
-☕ If this guide helped you, you can buy me a coffee for $5 on Ko-fi by clicking the `Support Me` button in the lower left.
+☕ If this guide helped you, you can buy me a coffee on Ko-fi by clicking the `Support Me` button in the lower left, or here directly:
+
+<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a coffee on Ko-fi', '#c51a4a', 'A0A41O8776');kofiwidget2.draw();</script> 
 
 <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
 <script>

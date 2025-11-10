@@ -514,9 +514,9 @@ Thank you, reader, for following along with me!
 
 \(^-^)/
 
-☕ If this guide helped you or you enjoyed it, you can buy me a coffee for $5 on Ko-fi:
+☕ If this guide helped you, or you simply enjoyed it, you can buy me a coffee on Ko-fi:
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A41O8776)
+<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a coffee on Ko-fi', '#c51a4a', 'A0A41O8776');kofiwidget2.draw();</script> 
 
 ---
 
